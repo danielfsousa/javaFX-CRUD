@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+<?import javafx.collections.*?>
+
+<VBox spacing="25" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="manutencao.controller.DanosAddController">
+    <stylesheets>
+        <URL value="@../css/Layout.css" />
+    </stylesheets>
+    <padding>
+        <Insets bottom="10" left="10" right="10" top="10" />    
+    </padding>
+    
+    <children>
+        <Label text="ADICIONAR DANO" styleClass="titulo" />
+    </children>
+    
+    <children>
+        <GridPane hgap="10" vgap="15">
+            
+            <Label GridPane.columnIndex="0" GridPane.rowIndex="0" text="Prioridade:" styleClass="texto" />
+            <ChoiceBox fx:id="cbPrioridade" GridPane.columnIndex="1" GridPane.rowIndex="0"  prefWidth="70">
+                <items>
+                    <FXCollections fx:factory="observableArrayList" fx:id="obsList" >
+                        <String fx:value="Baixa" />
+                        <String fx:value="Média" />
+                        <String fx:value="Alta" />
+                    </FXCollections>
+                </items>
+            </ChoiceBox>
+        
+                
+            <Label GridPane.columnIndex="0" GridPane.rowIndex="1" text="Local:" styleClass="texto" />
+            <TextField fx:id="tfLocal" GridPane.columnIndex="1" GridPane.rowIndex="1" prefWidth="200" GridPane.hgrow="ALWAYS"  />  
+                
+            <Label GridPane.columnIndex="0" GridPane.rowIndex="2" text="Descrição:" styleClass="texto" />
+            <TextField fx:id="tfDesc" GridPane.columnIndex="1" GridPane.rowIndex="2" prefWidth="200" GridPane.hgrow="ALWAYS" /> 
+                
+        </GridPane>  
+    </children>
+            
+    <children>
+        <HBox spacing="10" alignment="BOTTOM_RIGHT" >
+            <children>
+                <Button fx:id="btnAdicionar" text="Adicionar" prefWidth="80" onAction="#add" />
+            </children>
+            <children>
+                <Button fx:id="btnCancelar" text="Cancelar" prefWidth="80" onAction="#sair" />
+            </children>
+        </HBox>
+    </children>
+    
+</VBox>

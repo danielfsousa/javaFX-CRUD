@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.collections.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="323.0" prefWidth="600.0"  fx:controller="manutencao.controller.ManutencaoAddController">
+    <stylesheets>
+        <URL value="@../css/Layout.css" />
+    </stylesheets>
+    <children>
+        <Button fx:id="btnCancelar" layoutX="508.0" layoutY="284.0" mnemonicParsing="false" prefWidth="80.0" text="Cancelar" onAction="#cancelar"  />
+        <Button fx:id="btnSalvar" layoutX="417.0" layoutY="284.0" mnemonicParsing="false" prefWidth="80.0" text="Salvar" onAction="#salvar" />
+        <Label layoutX="341.0" layoutY="14.0" prefHeight="17.0" prefWidth="123.0" text="Nome do item:" />
+        <Label layoutX="341.0" layoutY="44.0" prefHeight="17.0" prefWidth="117.0" text="Valor do item:" />
+        <Label layoutX="341.0" layoutY="168.0" prefHeight="17.0" prefWidth="99.0" styleClass="texto" text="Valor total:" />
+        <Label fx:id="lblVTotal" layoutX="426.0" layoutY="172.0" text="R$" />
+        <TextField fx:id="tfItem" layoutX="440.0" layoutY="10.0" />
+        <TextField fx:id="tfValor" layoutX="440.0" layoutY="40.0" />
+        <TableView fx:id="tableItens" prefHeight="323.0" prefWidth="328.0">
+            <columns>
+                <TableColumn prefWidth="215.0" text="Nome">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="nome" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn minWidth="0.0" prefWidth="112.0" text="Valor">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="cellValor" />
+                    </cellValueFactory>
+                </TableColumn>
+            </columns>
+        </TableView>
+        <Button fx:id="btnAdd" layoutX="417.0" layoutY="77.0" mnemonicParsing="false" prefWidth="80.0" text="add" onAction="#add" />
+        <Button fx:id="btnExcluir" layoutX="508.0" layoutY="77.0" mnemonicParsing="false" prefWidth="80.0" text="excluir" onAction="#excluir" />
+        <Separator layoutX="328.0" layoutY="117.0" prefHeight="0.0" prefWidth="272.0" />
+        <ChoiceBox fx:id="cbTipo" layoutX="508.0" layoutY="128.0" prefHeight="25.0" prefWidth="85.0" >
+            <items>
+                <FXCollections fx:factory="observableArrayList" fx:id="obsList">
+                    <String fx:value="Corretiva" />
+                    <String fx:value="Preventiva" />
+                </FXCollections>
+            </items>
+        </ChoiceBox>
+        <Label layoutX="341.0" layoutY="198.0" prefHeight="17.0" prefWidth="99.0" styleClass="texto" text="Data:" />
+        <Label layoutX="341.0" layoutY="231.0" prefHeight="25.0" prefWidth="123.0" styleClass="texto" text="Quilometragem:" />
+        <Label fx:id="lblData" layoutX="381.0" layoutY="202.0" prefHeight="3.0" prefWidth="52.0" text="#Data" />
+        <Label fx:id="lblKm" layoutX="464.0" layoutY="235.0" prefHeight="3.0" prefWidth="52.0" text="#Qui" />
+    </children>
+</AnchorPane>

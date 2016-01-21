@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/Users/Daniel/Documents/NetBeansProjects/Manutenção/src/manutencao/view/FXML/PrimaryStage.fxml</file>
+            <file>file:/C:/Users/Daniel/Documents/NetBeansProjects/Manutenção/src/manutencao/controller/PrimaryStageController.java</file>
+            <file>file:/C:/Users/Daniel/Documents/NetBeansProjects/Manutenção/src/manutencao/model/ManipuladorDeObjetos.java</file>
+            <file>file:/C:/Users/Daniel/Documents/NetBeansProjects/Manutenção/src/manutencao/model/Dano.java</file>
+            <file>file:/C:/Users/Daniel/Documents/NetBeansProjects/Manutenção/src/manutencao/model/Veiculo.java</file>
+            <file>file:/C:/Users/Daniel/Documents/NetBeansProjects/Manutenção/src/manutencao/model/Manutencao.java</file>
+            <file>file:/C:/Users/Daniel/Documents/NetBeansProjects/Manutenção/src/manutencao/view/FXML/ManutencaoConfig.fxml</file>
+            <file>file:/C:/Users/Daniel/Documents/NetBeansProjects/Manutenção/src/manutencao/controller/DanosAddController.java</file>
+            <file>file:/C:/Users/Daniel/Documents/NetBeansProjects/Manutenção/src/manutencao/controller/ManutencaoConfigController.java</file>
+            <file>file:/C:/Users/Daniel/Documents/NetBeansProjects/Manutenção/src/manutencao/controller/ManutencaoAddController.java</file>
+            <file>file:/C:/Users/Daniel/Documents/NetBeansProjects/Manutenção/src/manutencao/model/ManipuladorDeTxt.java</file>
+            <file>file:/C:/Users/Daniel/Documents/NetBeansProjects/Manutenção/src/manutencao/view/FXML/DanosAdd.fxml</file>
+            <file>file:/C:/Users/Daniel/Documents/NetBeansProjects/Manutenção/src/manutencao/view/Alerta.java</file>
+            <file>file:/C:/Users/Daniel/Documents/NetBeansProjects/Manutenção/src/manutencao/view/View.java</file>
+            <file>file:/C:/Users/Daniel/Documents/NetBeansProjects/Manutenção/src/manutencao/model/ItemManutencao.java</file>
+            <file>file:/C:/Users/Daniel/Documents/NetBeansProjects/Manutenção/src/manutencao/view/FXML/ManutencaoAdd.fxml</file>
+        </group>
+    </open-files>
+</project-private>

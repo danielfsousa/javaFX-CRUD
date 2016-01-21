@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.text.*?>
+
+
+<BorderPane id="BorderPane" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="manutencao.controller.PrimaryStageController">
+    <left>
+        <GridPane>
+            <padding>
+                <Insets bottom="10" top="0" />  
+            </padding>
+            <GridPane hgap="5" vgap="5" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                <GridPane.margin>
+                    <Insets bottom="10" left="0" /> 
+                </GridPane.margin>
+                <TableView fx:id="tableVeiculos" prefHeight="1000.0" prefWidth="752" BorderPane.alignment="CENTER" GridPane.vgrow="ALWAYS" >
+                    <columns>
+                        <TableColumn fx:id="renavam" prefWidth="150" text="RENAVAM">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="renavam" />
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn fx:id="placa" prefWidth="150" text="Placa" >
+                            <cellValueFactory>
+                                <PropertyValueFactory property="placa" />
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn fx:id="classe" prefWidth="150" text="Classe" >
+                            <cellValueFactory>
+                                <PropertyValueFactory property="classe" />
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn fx:id="marca" prefWidth="150" text="Marca" >
+                            <cellValueFactory>
+                                <PropertyValueFactory property="marca" />
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn fx:id="modelo" prefWidth="150" text="Modelo" >
+                            <cellValueFactory>
+                                <PropertyValueFactory property="modelo" />
+                            </cellValueFactory>
+                        </TableColumn>
+                    </columns>
+                    <sortOrder>
+                        <fx:reference source="modelo"/>
+                    </sortOrder> 
+                </TableView>
+                
+            </GridPane>
+            
+            <GridPane hgap="10" vgap="10" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                <GridPane.margin>
+                    <Insets bottom="0" left="5" /> 
+                </GridPane.margin>
+                <TextField fx:id="txtSearch" promptText="Digite uma PLACA, CLASSE, MARCA, MODELO ou RENAVAM para pesquisar." GridPane.columnIndex="0" GridPane.hgrow="ALWAYS" GridPane.rowIndex="0" /> 
+                <HBox alignment="CENTER_RIGHT" spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                    <Button fx:id="btnClearSearch" prefWidth="80" text="Limpar" onAction="#limparBusca"  />
+                </HBox>
+            </GridPane>
+        </GridPane>
+    </left>
+    <center>
+        <GridPane hgap="10" vgap="10" stylesheets="@../css/Layout.css">
+            <padding>
+                <Insets left="10" right="10" bottom="10" top="10" />  
+            </padding>
+            
+            <HBox GridPane.columnSpan="2" GridPane.rowIndex="0" spacing="5" >
+                <Label text="MANUTENÇÃO" GridPane.columnIndex="0" GridPane.rowIndex="0" styleClass="titulo" />
+                <Button GridPane.columnIndex="1" GridPane.rowIndex="0" styleClass="btn-config"  onAction="#Mconfig">  
+                    <tooltip>
+                        <Tooltip text="Configurações" /> 
+                    </tooltip>
+                    <padding>
+                        <Insets top="4" bottom="4" right="8" left="8"  />  
+                    </padding>
+                </Button>
+                <Button fx:id="btnAddManutencao" GridPane.columnIndex="2" GridPane.rowIndex="0" styleClass="btn-add" onAction="#Madd">  
+                    <tooltip>
+                        <Tooltip text="Adicionar" /> 
+                    </tooltip>
+                    <padding>
+                        <Insets top="4" bottom="4" right="8" left="8"  />  
+                    </padding>
+                </Button>
+            </HBox>
+            
+            <HBox GridPane.columnIndex="0" GridPane.rowIndex="2" spacing="5">
+                <Label text="Quilometragem:" GridPane.columnIndex="0" GridPane.rowIndex="2" styleClass="texto" />
+                <Label fx:id="txtQuilometragem" text="" GridPane.columnIndex="1" GridPane.rowIndex="2" styleClass="texto" />
+            </HBox>
+            
+            <HBox GridPane.columnIndex="0" GridPane.rowIndex="3" spacing="5">
+                <Label text="Última manutenção:" GridPane.columnIndex="0" GridPane.rowIndex="3" styleClass="texto" />
+                <Label fx:id="txtUltimaRevisao" text="" GridPane.columnIndex="1" GridPane.rowIndex="3" styleClass="texto" />
+            </HBox>
+            
+            <HBox GridPane.columnIndex="0" GridPane.rowIndex="4" spacing="5">
+                <Label text="Próxima manutenção:" GridPane.columnIndex="0" GridPane.rowIndex="4" styleClass="texto" />
+                <Label fx:id="txtProximaRevisao" text="" GridPane.columnIndex="1" GridPane.rowIndex="4" styleClass="texto" />
+            </HBox> 
+            
+            <Separator prefWidth="200.0" GridPane.rowIndex="6" GridPane.columnSpan="2" GridPane.hgrow="ALWAYS" />
+                <Label text="MANUTENÇÕES REALIZADAS" GridPane.columnIndex="0" GridPane.rowIndex="7" styleClass="titulo" />
+            <TableView fx:id="tableManutencoes" GridPane.hgrow="ALWAYS" GridPane.columnSpan="2" prefWidth="2000"  GridPane.rowIndex="9" GridPane.vgrow="ALWAYS"  >    
+                <columns>
+                    <TableColumn fx:id="data" prefWidth="180" text="Data" >
+                        <cellValueFactory>
+                            <PropertyValueFactory property="cellData" /> 
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn fx:id="quilometragem" prefWidth="180" text="Quilometragem" >
+                        <cellValueFactory>
+                            <PropertyValueFactory property="cellKm" /> 
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn fx:id="tipo" prefWidth="180" text="Tipo" >
+                        <cellValueFactory>
+                            <PropertyValueFactory property="tipo" /> 
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn fx:id="itens" prefWidth="180" text="Itens" >
+                        <cellValueFactory>
+                            <PropertyValueFactory property="cellItens" /> 
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn fx:id="valor" prefWidth="180" text="Valor" >
+                        <cellValueFactory>
+                            <PropertyValueFactory property="cellValor" /> 
+                        </cellValueFactory>
+                    </TableColumn>
+                </columns>  
+                <columnResizePolicy>
+                    <!-- Erro: Bug do Netbeans -->
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                </columnResizePolicy>
+            </TableView>
+            
+            <Separator prefWidth="200.0" GridPane.rowIndex="10" GridPane.columnSpan="2" GridPane.hgrow="ALWAYS" />   
+            
+            <Label text="DANOS" GridPane.columnIndex="0" GridPane.rowIndex="11" styleClass="titulo" />
+            
+            <TableView fx:id="tableDanos" GridPane.hgrow="ALWAYS" GridPane.columnSpan="2" prefWidth="2000"  GridPane.rowIndex="13" GridPane.vgrow="ALWAYS"  >    
+                <columns>
+                    <TableColumn fx:id="prioridade" prefWidth="170" text="Prioridade" >
+                        <cellValueFactory>
+                            <PropertyValueFactory property="prioridade" /> 
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn fx:id="local" prefWidth="170" text="Local" >
+                        <cellValueFactory>
+                            <PropertyValueFactory property="local" /> 
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn fx:id="descricao" prefWidth="170" text="Descrição" >
+                        <cellValueFactory>
+                            <PropertyValueFactory property="descricao" /> 
+                        </cellValueFactory>
+                    </TableColumn>
+                </columns>  
+                <columnResizePolicy>
+                    <!-- Erro: Bug do Netbeans -->
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                </columnResizePolicy>
+            </TableView>
+               
+            <HBox alignment="CENTER_RIGHT" spacing="10" GridPane.columnSpan="2" GridPane.rowIndex="14" GridPane.hgrow="ALWAYS" >
+                <Button fx:id="btnAddDanos" prefWidth="80" text="Adicionar" onAction="#Dadd"  />
+                <Button fx:id="btnExcluirDanos" prefWidth="80" text="Excluir" onAction="#excluirDano"  />
+            </HBox> 
+        </GridPane>
+    </center>
+</BorderPane>

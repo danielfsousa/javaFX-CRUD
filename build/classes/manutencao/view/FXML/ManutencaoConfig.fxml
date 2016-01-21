@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.text.*?>
+
+<VBox spacing="25" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="manutencao.controller.ManutencaoConfigController">
+    <stylesheets>
+        <URL value="@../css/Layout.css" />
+    </stylesheets>
+    <padding>
+        <Insets bottom="10" left="10" right="10" top="10" />    
+    </padding>
+    
+    <children>
+        <Label text="CONFIGURAÇÕES" styleClass="titulo" />
+    </children>
+    
+    <children>
+        <GridPane>
+            <HBox GridPane.columnIndex="0" GridPane.rowIndex="1" spacing="10" >  
+                <padding>
+                    <Insets bottom="20" />    
+                </padding>
+                <children>
+                    <Label text="Calcular a próxima revisão por: " styleClass="texto" />
+                </children>
+                <children>
+                    <fx:define>
+                        <ToggleGroup fx:id="Intervalo" />
+                    </fx:define>
+                    <RadioButton fx:id="rdioDias" text="Dias" toggleGroup="$Intervalo" alignment="BOTTOM_LEFT" />
+                    <RadioButton fx:id="rdioQuilometros" text="Quilômetros" toggleGroup="$Intervalo" alignment="BOTTOM_LEFT" />
+                </children>  
+            </HBox>
+    
+            <HBox GridPane.columnIndex="0" GridPane.rowIndex="2" spacing="10">  
+                <padding>
+                    <Insets bottom="20" />    
+                </padding>
+                <children>
+                    <Label fx:id="txtDias" text="Dias: " styleClass="texto" />
+                </children>
+                <children>
+                    <TextField fx:id="tfDias" text="60" prefWidth="110" />
+                </children>
+                <children>
+                    <Label fx:id="txtQuilometros" text="Quilômetros: " styleClass="texto" />
+                </children>
+                <children>
+                    <TextField fx:id="tfQuilometros" text="25000" prefWidth="110" />
+                </children>
+            </HBox>
+    
+            <HBox fx:id="hbox" GridPane.columnIndex="0" GridPane.rowIndex="3" spacing="10" alignment="CENTER_RIGHT" >
+                <children>
+                    <Button fx:id="btnSalvar" text="Salvar" prefWidth="80" onAction="#salvar" />  
+                </children>
+                <children>
+                    <Button fx:id="btnCancelar" text="Cancelar" prefWidth="80" onAction="#sair" />  
+                </children>
+            </HBox>
+    
+        </GridPane>
+    </children>
+</VBox>

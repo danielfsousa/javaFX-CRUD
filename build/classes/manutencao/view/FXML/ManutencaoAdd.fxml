@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+<?import javafx.collections.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="manutencao.controller.ManutencaoAddController"> 
+    <stylesheets>
+        <URL value="@../css/Layout.css" />
+    </stylesheets>
+    <padding>
+        <Insets right="10" />    
+    </padding>
+    <center>
+        <TableView fx:id="tableItens" prefWidth="300.0" >
+            <columns>
+                <TableColumn text="Nome" prefWidth="200.0"> 
+                    <cellValueFactory>
+                        <PropertyValueFactory property="nome" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Valor" prefWidth="100.0"> 
+                    <cellValueFactory>
+                        <PropertyValueFactory property="cellValor" />
+                    </cellValueFactory>
+                </TableColumn>
+            </columns>
+        </TableView>
+    </center>
+    <right>
+        <GridPane vgap="5" hgap="5" >
+            <padding>
+                <Insets left="10" top="10" />    
+            </padding>
+            
+            <VBox GridPane.rowIndex="0" GridPane.columnSpan="2">
+                <padding>
+                    <Insets bottom="25" />    
+                </padding>
+                <children>
+                    <Label text="ADICIONAR MANUTENÇÃO" styleClass="titulo" />
+                </children>
+            </VBox>
+                
+            <Label GridPane.rowIndex="1" GridPane.columnIndex="0" text="Nome do item:" styleClass="texto" />
+            <TextField GridPane.rowIndex="1" GridPane.columnIndex="1"  fx:id="tfItem" />
+        
+            <Label GridPane.rowIndex="2" GridPane.columnIndex="0" text="Valor do item:" styleClass="texto" /> 
+            <TextField GridPane.rowIndex="2" GridPane.columnIndex="1" fx:id="tfValor" /> 
+            
+            <HBox GridPane.rowIndex="3" GridPane.columnSpan="2" alignment="BOTTOM_RIGHT" spacing="10">
+                <padding>
+                    <Insets bottom="15" top="10" />    
+                </padding>
+                <children>
+                    <Button fx:id="btnAdd" text="Adicionar" prefWidth="80" onAction="#add" />
+                </children>
+                <children>
+                    <Button fx:id="btnExcluir" text="Excluir" prefWidth="80" onAction="#excluir" />
+                </children>
+            </HBox>
+            
+            <Separator GridPane.rowIndex="4" GridPane.columnSpan="2" GridPane.hgrow="ALWAYS" />
+            
+            <VBox GridPane.rowIndex="5" GridPane.columnSpan="2" spacing="8" >
+                <padding>
+                    <Insets top="15" />    
+                </padding>
+            
+            
+                <HBox spacing="5" >
+                    <children>
+                        <Label text="Tipo:" styleClass="texto" />
+                    </children>
+                    <children>
+                        <ChoiceBox fx:id="cbTipo" prefWidth="85" >
+                            <items>
+                                <FXCollections fx:factory="observableArrayList" fx:id="obsList">
+                                    <String fx:value="Corretiva" />
+                                    <String fx:value="Preventiva" />
+                                </FXCollections>
+                            </items>
+                        </ChoiceBox> 
+                    </children>
+                </HBox>             
+            
+            
+                <HBox spacing="5" >
+                    <children>
+                        <Label text="Data:" styleClass="texto" />
+                    </children>
+                    <children>
+                        <Label fx:id="lblData" text="" styleClass="texto" />
+                    </children>
+                </HBox>             
+            
+                <HBox spacing="5" >
+                    <children>
+                        <Label text="Quilometragem:" styleClass="texto" />
+                    </children>
+                    <children>
+                        <Label fx:id="lblKm" text="" styleClass="texto" />
+                    </children>
+                </HBox>             
+                
+                <HBox spacing="5" >
+                    <children>
+                        <Label text="Valor total:" styleClass="texto" />
+                    </children>
+                    <children>
+                        <Label fx:id="lblVTotal" text="" styleClass="texto" />
+                    </children>
+                </HBox>             
+            
+                <HBox alignment="BOTTOM_RIGHT" spacing="10">
+                    <padding>
+                        <Insets bottom="5" top="10" />    
+                    </padding>
+                    <children>
+                        <Button fx:id="btnSalvar" text="Salvar" prefWidth="80" onAction="#salvar" />
+                    </children>
+                    <children>
+                        <Button fx:id="btnCancelar" text="Cancelar" prefWidth="80" onAction="#cancelar" />
+                    </children>
+                </HBox>
+            </VBox>
+                
+        </GridPane>
+    </right>
+</BorderPane>
